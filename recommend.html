@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Recommend | WatchNext</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <header>
+        <h1>WatchNext</h1>
+        <p>Discover. Book. Enjoy</p>
+        <nav>
+            <a href="index.html">Home</a>
+            <a href="movies.html">Movies</a>
+            <a href="recommend.html" class="active" aria-current="page">recommend</a>
+            <a href="register.html">Register</a>
+            <a href="booking.html">Booking</a>
+        </nav>
+    </header>
+    <!--Recommendations form-->
+    <section>
+        <h2>Find your next movie</h2>
+        <p>Tell us what you like and we will suggest a movie for you.</p>
+                <form id="recommendForm" novalidate>
+
+            <!-- Preferred genre -->
+            <div>
+                <label for="genre">Preferred genre</label>
+                <select id="genre" name="genre">
+                    <option value="">Select a genre</option>
+                    <option value="action">Action</option>
+                    <option value="comedy">Comedy</option>
+                    <option value="animation">Animation</option>
+                    <option value="drama">Drama</option>
+                </select>
+                <span class="error" id="genreError"></span>
+            </div>
+            <!-- Age group -->
+            <div>
+                <label for="ageGroup">Age group</label>
+                <select id="ageGroup" name="ageGroup">
+                    <option value="">Select an age group</option>
+                    <option value="child">Child</option>
+                    <option value="teen">Teen</option>
+                    <option value="adult">Adult</option>
+                </select>
+                <span class="error" id="ageGroupError"></span>
+            </div>
+
+            <!-- Viewing preference -->
+            <div>
+                <label for="viewing">Viewing preference</label>
+                <select id="viewing" name="viewing">
+                    <option value="">Select a preference</option>
+                    <option value="family">Family</option>
+                    <option value="date">Date Night</option>
+                    <option value="friends">Friends</option>
+                    <option value="solo">Solo</option>
+                </select>
+                <span class="error" id="viewingError"></span>
+            </div>
+
+            <button type="submit">Recommend a movie</button>
+        </form>
+
+        <!-- JavaScript will show the recommended movie here -->
+        <div id="recommendationResult" aria-live="polite"></div>
+     </section>
+    <footer>
+        <p>&copy; 2026 WatchNext | Created by Parwinder kaur</p>
+    </footer>
+    <script src="js/script.js"></script>
+    
+</body>
+</html>

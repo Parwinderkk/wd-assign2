@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Booking | WatchNext</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <header>
+        <h1>WatchNext</h1>
+        <p>Discover. Book. Enjoy.</p>
+        <nav>
+            <a href="index.html">Home</a>
+            <a href="movies.html">Movies</a>
+            <a href="recommend.html">Recommend</a>
+            <a href="register.html">Register</a>
+            <a href="booking.html" class="active" aria-current="page">Booking</a>
+        </nav>
+    </header>
+
+    <!-- Booking form -->
+    <section>
+        <h2>Book Your Tickets</h2>
+
+        <form id="bookingForm" method="post" action="http://mercury.swin.edu.au/it000000/cos10005/regtest.php" novalidate>
+
+            <!-- Personal details -->
+            <fieldset>
+                <legend>Your details</legend>
+
+                <div>
+                    <label for="fullName">Full name</label>
+                    <input type="text" id="fullName" name="fullName">
+                    <span class="error" id="fullNameError"></span>
+                </div>
+
+                <div>
+                    <label for="bookingEmail">Email address</label>
+                    <input type="email" id="bookingEmail" name="email">
+                    <span class="error" id="bookingEmailError"></span>
+                </div>
+
+                <div>
+                    <label for="bookingPhone">Phone number</label>
+                    <input type="tel" id="bookingPhone" name="phone">
+                    <span class="error" id="bookingPhoneError"></span>
+                </div>
+            </fieldset>
+
+            <!-- Movie and session -->
+            <fieldset>
+                <legend>Movie and session</legend>
+
+                <div>
+                    <label for="movie">Movie</label>
+                    <select id="movie" name="movie">
+                        <option value="">Select a movie</option>
+                        <option value="Sky" data-price="15.00">Sky</option>
+                        <option value="21 Home" data-price="18.50">21 Home</option>
+                        <option value="Limitless" data-price="23.00">Limitless</option>
+                        <option value="Waterman" data-price="20.00">Waterman</option>
+                        <option value="The Dream" data-price="22.00">The Dream</option>
+                        <option value="Stargaze" data-price="19.50">Stargaze</option>
+                    </select>
+                    <span class="error" id="movieError"></span>
+                </div>
+
+                <div>
+                    <label for="screening">Screening date and time</label>
+                    <input type="datetime-local" id="screening" name="screening">
+                    <span class="error" id="screeningError"></span>
+                </div>
+            </fieldset>
+
+            <!-- Tickets and cost -->
+            <fieldset>
+                <legend>Tickets</legend>
+
+                <div>
+                    <label for="tickets">Number of tickets</label>
+                    <input type="number" id="tickets" name="tickets" min="1" value="1">
+                    <span class="error" id="ticketsError"></span>
+                </div>
+
+                <div>
+                    <label for="ticketType">Ticket type</label>
+                    <select id="ticketType" name="ticketType">
+                        <option value="adult">Adult</option>
+                        <option value="child">Child</option>
+                        <option value="student">Student</option>
+                    </select>
+                </div>
+
+                <div>
+                    <label for="requests">Special requests (optional)</label>
+                    <textarea id="requests" name="requests" rows="3"></textarea>
+                </div>
+
+                <div>
+                    <label for="ticketPrice">Ticket price ($)</label>
+                    <input type="text" id="ticketPrice" name="ticketPrice" value="0.00" readonly>
+                </div>
+
+                <div>
+                    <label for="totalCost">Total booking cost ($)</label>
+                    <input type="text" id="totalCost" name="totalCost" value="0.00" readonly>
+                </div>
+            </fieldset>
+
+            <!-- Payment -->
+            <fieldset>
+                <legend>Payment method</legend>
+
+                <input type="radio" id="payVoucher" name="payment" value="voucher">
+                <label for="payVoucher">Voucher</label>
+                <input type="radio" id="payOnline" name="payment" value="online">
+                <label for="payOnline">Online payment</label>
+                <span class="error" id="paymentError"></span>
+
+                <!-- Shown only when Voucher is selected -->
+                <div id="voucherFields" hidden>
+                    <label for="voucherCode">Voucher code (12 digits)</label>
+                    <input type="text" id="voucherCode" name="voucherCode" inputmode="numeric" maxlength="12">
+                    <span class="error" id="voucherCodeError"></span>
+                </div>
+
+                <!-- Shown only when Online payment is selected -->
+                <div id="cardFields" hidden>
+                    <label for="cardType">Card type</label>
+                    <select id="cardType" name="cardType">
+                        <option value="visa">Visa</option>
+                        <option value="mastercard">Mastercard</option>
+                        <option value="amex">American Express</option>
+                    </select>
+
+                    <label for="cardNumber">Card number (use a fake number for testing)</label>
+                    <input type="text" id="cardNumber" name="cardNumber" inputmode="numeric" maxlength="16" autocomplete="off">
+                    <span class="error" id="cardNumberError"></span>
+                </div>
+
+                <!-- Billing email -->
+                <div>
+                    <label for="billingEmail">Billing email address</label>
+                    <input type="email" id="billingEmail" name="billingEmail">
+                    <input type="checkbox" id="sameEmail" name="sameEmail">
+                    <label for="sameEmail">Same as email address</label>
+                    <span class="error" id="billingEmailError"></span>
+                </div>
+            </fieldset>
+
+            <button type="submit">Confirm booking</button>
+        </form>
+    </section>
+
+    <footer>
+        <p>&copy; 2026 WatchNext | Created by your name</p>
+    </footer>
+
+    <script src="js/script.js"></script>
+</body>
+</html>

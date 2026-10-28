@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Register | WatchNext</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <header>
+        <h1>WatchNext</h1>
+        <p>Discover. Book. Enjoy.</p>
+        <nav>
+            <a href="index.html">Home</a>
+            <a href="movies.html">Movies</a>
+            <a href="recommend.html">Recommend</a>
+            <a href="register.html" class="active" aria-current="page">Register</a>
+            <a href="booking.html">Booking</a>
+        </nav>
+    </header>
+    <!--Registration form-->
+    <section>
+        <h2>Craete an Account</h2>
+        <form id="registerForm" method="post" novalidate>
+            <!--Username-->
+            <div>
+                <label for="username">Username</label>
+                <input type="text" id="username" name="username">
+                <span class="error" id="usernameError"></span>
+            </div>
+            <!--Email-->
+            <div>
+                <label for="email">Email address</label>
+                <input type="email" id="email" name="email">
+                <span class="error" id="emailError"></span>
+            </div>
+            <!--Phone-->
+            <div>
+                <label for="phone">Phone number</label>
+                <input type="tel" id="phone" name="phone">
+                <span class="error" id="phoneError"></span>
+            </div>
+            <!--Password-->
+            <div>
+                <label for="password">Password</label>
+                <input type="password" id="password" name="password">
+                <span class="error" id="passwordError"></span>
+            </div>
+            <!--Confirm password-->
+            <div>
+                <label for="confirmPassword">Confirm password</label>
+                <input type="password" id="confirmPassword" name="confirmPassword">
+                <span class="error" id="confirmPasswordError"></span>
+            </div>
+            <!--Gender-->
+            <fieldset>
+                <legend>Gender</legend>
+                <input type="radio" id="genderFemale" name="gender" value="female">
+                <label for="genderFemale">Female</label>
+                <input type="radio" id="genderMale" name="gender" value="male">
+                <label for="genderMale">Male</label>
+                <input type="radio" id="genderOther" name="gender" value="other">
+                <label for="genderOther">Other</label>
+                <span class="error" id="genderError"></span>
+            </fieldset>
+            <!--Preferred genres-->
+            <fieldset>
+                <legend>Preferred movie genre(s)</legend>
+                <input type="checkbox" id="genreAction" name="genre" value="action">
+                <label for="genreAction">Action</label>
+                <input type="checkbox" id="genreComedy" name="genre" value="comedy">
+                <label for="genreComedy">Comedy</label>
+                <input type="checkbox" id="genreAnimation" name="genre" value="animation">
+                <label for="genreAnimation">Animation</label>
+                <input type="checkbox" id="genreDrama" name="genre" value="drama">
+                <label for="genreDrama">Drama</label>
+            </fieldset>
+            <!--Country-->
+            <div>
+            <label for="country">Country/Region</label>
+            <select id="country" name="country">
+                <option value="">Select a country</option>
+                <option value="australia">Australia</option>
+                <option value="india">India</option>
+                <option value="china">China</option>
+                <option value="nepal">Nepal</option>
+                <option value="new-zealand">New-Zealand</option>
+                <option value="united-kingdom">United Kingdom</option>
+                <option value="other">Other</option>
+            </select>
+            <span class="error" id="countryError"></span>
+            <span class="error" id="genreError"></span>
+            </div>
+            <!--Submit-->
+            <button type="submit">Register</button>
+        </form>
+</section>
+<footer>
+    <p>&copy; 2026 watchNext | Craeted by Parwinder kaur</p>
+</footer>
+<script src="js/script.js"></script>
+    
+</body>
+</html>
